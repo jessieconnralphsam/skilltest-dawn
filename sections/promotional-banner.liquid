@@ -6,7 +6,6 @@
     <a href="{{ section.settings.banner_button_link }}" class="banner-button">See locations</a>
   </div>
 </div>
-
 <style>
 .promotional-banner {
   position: relative;
@@ -17,13 +16,11 @@
   display: flex;
   align-items: center;
 }
-
 .promotional-banner .overlay {
   position: absolute;
   inset: 0;
   background-color: rgba(0,0,0,0.4);
 }
-
 .promotional-banner .content {
   position: relative;
   margin-left: 50px;
@@ -32,7 +29,6 @@
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
-
 .promotional-banner .content h1 {
   color: #fff; 
   font-size: 6rem;
@@ -40,13 +36,11 @@
   margin-bottom: 15px;
   font-weight: bold;
 }
-
 .promotional-banner .content p {
   font-size: 2rem;
   line-height: 1.4;
   margin-bottom: 25px;
 }
-
 .promotional-banner .banner-button {
   display: inline-block;
   padding: 12px 30px;
@@ -58,12 +52,60 @@
   text-transform: uppercase;
   transition: background-color 0.3s ease;
 }
-
 .promotional-banner .banner-button:hover {
   background-color: #e66c00;
 }
-</style>
 
+/* Tablet and below */
+@media (max-width: 768px) {
+  .promotional-banner {
+    height: 60vh;
+    min-height: 400px;
+    justify-content: center;
+  }
+  
+  .promotional-banner .content {
+    margin-left: 0;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  .promotional-banner .content h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+  }
+  
+  .promotional-banner .content p {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .promotional-banner {
+    height: 50vh;
+    min-height: 350px;
+  }
+  
+  .promotional-banner .content {
+    padding: 0 15px;
+  }
+  
+  .promotional-banner .content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .promotional-banner .content p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+  
+  .promotional-banner .banner-button {
+    padding: 10px 24px;
+    font-size: 0.875rem;
+  }
+}
+</style>
 {% schema %}
 {
   "name": "Promotional Banner",
