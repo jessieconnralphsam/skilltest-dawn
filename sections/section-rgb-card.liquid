@@ -3,34 +3,148 @@
 
 <div class="rgb-card-section">
   <div class="rgb-cards">
+    {% for block in section.blocks %}
+      <div class="rgb-card">
+        <div class="top-box">
+          <img
+            src="{{ block.settings.image_filename | asset_url }}"
+            alt="card image"
+            class="fit-image"
+          >
+        </div>
+        <div class="bottom-box">
+          <div class="row-box">
+            <div class="text-block">
+              {% assign rating = block.settings.rating_stars | default: 0 %}
+              {% assign rating_count = block.settings.rating_count | default: 0 %}
+              {% if rating > 0 %}
+                <div class="star-rating">
+                  {% for i in (1..5) %}
+                    {% if i <= rating %}
+                      <svg class="star filled" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03
+                        L22 9.24l-7.19-.61L12 2
+                        9.19 8.63 2 9.24l5.46
+                        4.73L5.82 21z"/>
+                      </svg>
+                    {% else %}
+                      <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M22 9.24l-7.19-.62L12 2
+                        9.19 8.63 2 9.24l5.46
+                        4.73L5.82 21 12 17.27
+                        18.18 21l-1.64-7.03z"/>
+                      </svg>
+                    {% endif %}
+                  {% endfor %}
+                  <span class="rating-count">({{ rating_count }})</span>
+                </div>
+              {% endif %}
 
-    <div class="rgb-card">
-      <div class="box top-box">test</div>
-      <div class="box-row">
-        <div class="box small-box">test</div>
-        <div class="box small-box">test</div>
-      </div>
-      <div class="box bottom-box">test</div>
-    </div>
-    <div class="rgb-card">
-      <div class="box top-box">test</div>
-      <div class="box-row">
-        <div class="box small-box">test</div>
-        <div class="box small-box">test</div>
-      </div>
-      <div class="box bottom-box">test</div>
-    </div>
+              <h2>{{ block.settings.small_text_1 }}</h2>
+            </div>
 
-    <div class="rgb-card">
-      <div class="box top-box">test</div>
-      <div class="box-row">
-        <div class="box small-box">test</div>
-        <div class="box small-box">test</div>
-      </div>
-      <div class="box bottom-box">test</div>
-    </div>
+            <div class="action-block">
+              ADD SAMPLE +
+            </div>
+          </div>
 
+          <div class="box small-box">
+            <h4>{{ block.settings.small_text_2 }}</h4>
+          </div>
+
+          <div class="row-box-large">
+            <div class="box small-boxes">Width: {{ block.settings.width }}"</div>
+            <div class="box small-boxes">&middot; Height: {{ block.settings.thickness }}"</div>
+          </div>
+
+          <div class="box-row">
+            <div class="box small-box price">{{ block.settings.prize }}</div>
+          </div>
+
+          <div class="box-bottom">
+            View Specs & Sample Options
+          </div>
+        </div>
+      </div>
+    {% endfor %}
   </div>
 </div>
 
-
+{% schema %}
+{
+  "name": "RGB Card Section",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "image_filename",
+          "label": "Image Filename",
+          "info": "e.g., card-one.webp (from assets folder)"
+        },
+        {
+          "type": "text",
+          "id": "small_text_1",
+          "label": "Product Name"
+        },
+        {
+          "type": "text",
+          "id": "small_text_2",
+          "label": "Action Text",
+          "default": "Add Sample +"
+        },
+        {
+          "type": "text",
+          "id": "width",
+          "label": "width",
+          "default": "test height"
+        },
+        {
+          "type": "text",
+          "id": "thickness",
+          "label": "thickness",
+          "default": "test height"
+        },
+        {
+          "type": "text",
+          "id": "prize",
+          "label": "prize",
+          "default": "test prize"
+        },
+        {
+          "type": "range",
+          "id": "rating_stars",
+          "label": "Rating Stars",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "rating_count",
+          "label": "Rating Count",
+          "default": 0
+        },
+        {
+          "type": "text",
+          "id": "bottom_text",
+          "label": "Bottom Text",
+          "default": "Wood Flooring"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "RGB Card Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

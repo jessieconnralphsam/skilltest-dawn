@@ -8,20 +8,67 @@
         "banner_button_link": "/"
       }
     },
+    "rgb_card_section": {
+      "type": "section-rgb-card",
+      "settings": {},
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "image_filename": "card-one.webp",
+            "small_text_1": "Zurich Herringbone European Oak",
+            "small_text_2": "HardWood Flooring",
+            "rating_stars": 0,
+            "rating_count": 0,
+            "width": "5",
+            "thickness": "3/8",
+            "prize": "$4.99 sq ft",
+            "bottom_text": "Wood Flooring"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "image_filename": "card-two.jpg",
+            "small_text_1": "Tahoe White Oak",
+            "small_text_2":"HardWood Flooring",
+            "rating_stars": 5,  
+            "rating_count": 1,
+            "width": "9.5",
+            "thickness": "1/2",
+            "prize": "$5.49 sq ft",
+            "bottom_text": "Wood Flooring"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "image_filename": "card-three.webp",
+            "small_text_1": "Natural White Oak",
+            "small_text_2": "HardWood Flooring",
+            "rating_stars": 0,
+            "rating_count": 0, 
+            "width": "7.5",
+            "thickness": "1/2",
+            "prize": "$5.49 sq ft",
+            "bottom_text": "Wood Flooring"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ]
+    },
     "card-promo-section": {
       "type": "card-promo-section",
       "settings": {}
-    },
-    "rgb_card_section": {
-      "type": "section-rgb-card",
-      "settings": {
-        "products": []
-      }
     }
   },
   "order": [
     "promotional_banner",
-    "card-promo-section",
-    "rgb_card_section"
+    "rgb_card_section",
+    "card-promo-section"
   ]
 }
