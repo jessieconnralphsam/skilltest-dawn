@@ -11,10 +11,17 @@
     "card-promo-section": {
       "type": "card-promo-section",
       "settings": {}
+    },
+    "rgb_card_section": {
+      "type": "section-rgb-card",
+      "settings": {
+        "products": []
+      }
     }
   },
   "order": [
     "promotional_banner",
-    "card-promo-section"
+    "card-promo-section",
+    "rgb_card_section"
   ]
 }

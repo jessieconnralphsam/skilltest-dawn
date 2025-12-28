@@ -1,0 +1,44 @@
+.rgb-card-section {
+  padding: 40px;
+}
+
+.rgb-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.rgb-card {
+  width: 260px;
+  padding: 16px;
+  border: 4px solid #000;
+  box-sizing: border-box;
+}
+
+.box {
+  border: 4px solid #000;
+  box-sizing: border-box;
+}
+
+/* Top big box */
+.top-box {
+  height: 120px;
+  margin-bottom: 16px;
+}
+
+/* Two-box row */
+.box-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.small-box {
+  flex: 1;
+  height: 40px;
+}
+
+/* Bottom big box */
+.bottom-box {
+  height: 80px;
+}
