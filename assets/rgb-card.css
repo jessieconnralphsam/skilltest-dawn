@@ -11,9 +11,11 @@
   padding: 0;
   box-sizing: border-box;
   margin: 0 8px;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
-  height: 130vh;
+  height: auto;
+  min-height: 600px; 
+  max-height: 130vh;
   background-color: #fff;
   border: 1px solid #ccc; 
 }
