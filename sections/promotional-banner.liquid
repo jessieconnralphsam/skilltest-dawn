@@ -1,0 +1,101 @@
+<div class="promotional-banner" style="background-image: url({% if section.settings.banner_image != blank %}{{ section.settings.banner_image | img_url: 'master' }}{% else %}{{ 'banner.webp' | asset_url }}{% endif %});">
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>{{ section.settings.banner_title }}</h1>
+    <p>{{ section.settings.banner_description }}</p>
+    <a href="{{ section.settings.banner_button_link }}" class="banner-button">See locations</a>
+  </div>
+</div>
+
+<style>
+.promotional-banner {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.promotional-banner .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.promotional-banner .content {
+  position: relative;
+  margin-left: 50px;
+  max-width: 440px;
+  z-index: 2;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.promotional-banner .content h1 {
+  color: #fff; 
+  font-size: 6rem;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.promotional-banner .content p {
+  font-size: 2rem;
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+
+.promotional-banner .banner-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #ff7f00;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.promotional-banner .banner-button:hover {
+  background-color: #e66c00;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Promotional Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "banner_title",
+      "label": "Banner Title",
+      "default": "Visit A Showroom"
+    },
+    {
+      "type": "textarea",
+      "id": "banner_description",
+      "label": "Banner Description",
+      "default": "Unlike most flooring manufacturers, we have beautiful show rooms where you can see and feel our products for yourself"
+    },
+    {
+      "type": "url",
+      "id": "banner_button_link",
+      "label": "Button Link",
+      "default": "/"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotional Banner"
+    }
+  ]
+}
+{% endschema %}
