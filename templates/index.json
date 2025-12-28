@@ -7,9 +7,14 @@
         "banner_description": "Unlike most flooring manufacturers, we have beautiful show rooms where you can see and feel our products for yourself",
         "banner_button_link": "/"
       }
+    },
+    "card-promo-section": {
+      "type": "card-promo-section",
+      "settings": {}
     }
   },
   "order": [
-    "promotional_banner"
+    "promotional_banner",
+    "card-promo-section"
   ]
 }
